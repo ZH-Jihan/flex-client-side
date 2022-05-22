@@ -1,0 +1,41 @@
+.navbar {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  width: 90%;
+  margin: auto;
+}
+.nav-logo {
+  width: 200px;
+  height: 75px;
+}
+.navbar a {
+  text-decoration: none;
+  font-size: 16px;
+  margin: 10px;
+  padding: 10px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 3px solid whitesmoke;
+  font-family: Georgia, Times, "Times New Roman", serif;
+}
+.navbar .active-link {
+  text-decoration: none;
+  font-size: 16px;
+  margin: 10px;
+  padding: 10px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 3px solid black;
+  font-family: Georgia, Times, "Times New Roman", serif;
+}
+.navbar-brand {
+  font-size: 2.25rem;
+}
+.navbar-nav {
+  margin: 0px;
+}
+.navbar-light .navbar-toggler {
+  border-color: #ffffff87;
+}
