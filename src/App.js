@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
+import Home from "./Component/Home/Home";
 import About from "./Component/Pages/About";
 import Blog from "./Component/Pages/Blog";
 import Login from "./Component/Pages/Login";
-import Home from "./Component/Shared/Home/Home";
 import Navber from './Component/Shared/Navber';
 
 function App() {

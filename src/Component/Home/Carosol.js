@@ -1,8 +1,8 @@
 import React from "react";
-import img1 from '../../../assets/Carosol/img1.jpg';
-import img2 from '../../../assets/Carosol/img2.jpg';
-import img3 from '../../../assets/Carosol/img3.jpg';
-import img4 from '../../../assets/Carosol/img4.jpg';
+import img1 from '../../assets/Carosol/img1.jpg';
+import img2 from '../../assets/Carosol/img2.jpg';
+import img3 from '../../assets/Carosol/img3.jpg';
+import img4 from '../../assets/Carosol/img4.jpg';
 
 const Carosol = () => {
   return (

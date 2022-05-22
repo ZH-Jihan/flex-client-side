@@ -1,5 +1,5 @@
 import React from "react";
-import char from "../../../assets/images/chair.png";
+import char from "../../assets/images/chair.png";
 
 const Banar = () => {
   return (
