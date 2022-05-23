@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Multitool",
+    "img": "https://www.flex-tools.com/fileadmin/user_upload/_09A0749_.jpg",
+    "description": "The new multitool can be used for a wide range of applications, such as sawing, cutting, cutting out wood, metal, plastic and plasterboard.",
+    "price": "€ 160.91",
+    "quantity": "7000"
+  },
+  {
+    "id": 1,
+    "name": "Cordless floodlight hand lamp",
+    "img": "https://www.flex-tools.com/fileadmin/flex-tools.com/media/News/Neuheiten/WL-2800_Akku-Flutlicht-LED-Handlampe_Baustellenlampe_Taschenlampe_FLEX.jpg",
+    "description": "Never be in the dark again: The new WL 2800 18.0 rechargeable floodlight with 7 LEDs and 2800 lumens for a lighting range of up to 630m. Perfect flexibility with the FLEX 18 V rechargeable batteries or 12 V cigarette lighter.",
+    "price": "€ 128.26",
+    "quantity": "9000"
+  },
+  {
+    "id": 2,
+    "name": "Cordless connect",
+    "img": "https://www.flex-tools.com/fileadmin/flex-tools.com/media/News/Neuheiten/Cordless-Connect-Funksteckdose-Akkugeraete.jpg",
+    "description": "Perfect combination: Cordless Connect + extraction unit + battery-powered unit. Automatic switching on and off of the extraction unit by the new FLEX radio-controlled socket",
+    "price": "€ 128.26",
+    "quantity": "5356"
+  },
+  {
+    "id": 3,
+    "name": "Single-hand random orbital sander",
+    "img": "https://www.flex-tools.com/fileadmin/flex-tools.com/media/News/Neuheiten/ORE-2-125_Einhand-Exzenterschleifer_integrierte-Eigenabsaugung_Schleifer_FLEX.jpg",
+    "description": "Compact, lightweight, brushless motor - the new ORE 2-125 EC random orbit sander with electronic speed adjustment for ergonomic and joint-friendly working",
+    "price": "€ 289.26",
+    "quantity": "4025"
+  },
+  {
+    "id": 4,
+    "name": "One-hand orbital sander",
+    "img": "https://www.flex-tools.com/fileadmin/flex-tools.com/media/News/Neuheiten/OSE-2-80_Einhand-Schwingschleifer_integrierte-Eigenabsaugung_Schleifer_FLEX.jpg",
+    "description": "Brushless motor, compact design and soft-touch switch with quick-stop ensure optimum guidance of the new OSE 2-80 EC orbital sander in every situation.",
+    "price": "€ 296",
+    "quantity": "5000"
+  },
+  {
+    "id": 5,
+    "name": "Delta sander with speed control",
+    "img": "https://www.flex-tools.com/fileadmin/flex-tools.com/media/News/Neuheiten/OSE-2-80_Einhand-Schwingschleifer_integrierte-Eigenabsaugung_Schleifer_FLEX.jpg",
+    "description": "Compact, lightweight, ergonomic: One-handed delta sander ODE 2-100 EC. Unique flexibility thanks to multi-hole pad for holding all sandpapers with 125mm diameter.",
+    "price": "€ 312",
+    "quantity": "8000"
+  }
+]
