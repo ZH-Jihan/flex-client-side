@@ -5,6 +5,7 @@ import logo from '../../assets/Logo/logo_new.png';
 const Navber = () => {
     const menuitem = <>
         <li><Link to="/home">Home</Link></li>
+        <li><Link to="/dashbord">Dashbord</Link></li>
         <li><Link to="/blog">Blog</Link></li>
         <li><Link to="/contact">Contact</Link></li>
         <li><Link to="/about">About</Link></li>
@@ -14,7 +15,7 @@ const Navber = () => {
           </div>
         <button className="btn " type="submit">Search</button>
       </form>
-        <li><Link to="/logins">Login</Link></li>
+        <li><Link to="/login">Login</Link></li>
     </>
     return (
         <div className="navbar bg-error text-white justify-around md:justify-around">

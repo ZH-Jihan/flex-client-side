@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import SocileLogin from '../Shared/SocileLogin';
+ 
 const Login = () => {
   return (
     <section class="bg-blueGray-50">
@@ -7,30 +10,7 @@ const Login = () => {
             <div class="text-center mb-6">
               <h6 class="text-blueGray-500 text-3xl font-bold">Log In with</h6>
             </div>
-            <div class="btn-wrapper text-center">
-              <button
-                class="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
-                type="button"
-              >
-                <img
-                  alt="..."
-                  class="w-5 mr-1"
-                  src="https://demos.creative-tim.com/notus-js/assets/img/github.svg"
-                />
-                Github
-              </button>
-              <button
-                class="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
-                type="button"
-              >
-                <img
-                  alt="..."
-                  class="w-5 mr-1"
-                  src="https://demos.creative-tim.com/notus-js/assets/img/google.svg"
-                />
-                Google{" "}
-              </button>
-            </div>
+            <SocileLogin></SocileLogin>
             <div class="divider">OR</div>
           </div>
           <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
@@ -90,10 +70,10 @@ const Login = () => {
             </form>
             <span class="ml-2"
             >You don't have an account?
-            <a
-              href="/registar"
+            <Link
+              to="/registar"
               class="text-xs ml-2 text-blue-500 font-semibold"
-              >Please Registar</a>
+              >Please Registar</Link>
               </span>
           </div>
         </div>

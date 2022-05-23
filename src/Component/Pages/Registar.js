@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import SocileLogin from '../Shared/SocileLogin';
 
 const Registar = () => {
     return (
@@ -42,10 +44,10 @@ const Registar = () => {
         </div>
         <span class="ml-2"
             >You have an account?
-            <a
-              href="/login"
+            <Link
+              to='/login'
               class="text-xs ml-2 text-blue-500 font-semibold"
-              >Login here</a>
+              >Login here</Link>
               </span>
         <div class="text-center mt-6">
           <button class="btn text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150" type="button">
@@ -55,13 +57,7 @@ const Registar = () => {
       </form>
     </div>
     <div class="divider">OR</div>
-      <div class="btn-wrapper text-center">
-        <button class="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150" type="button">
-          <img alt="..." class="w-5 mr-1" src="https://demos.creative-tim.com/notus-js/assets/img/github.svg"/>Github </button>
-        <button class="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150" type="button">
-          <img alt="..." class="w-5 mr-1" src="https://demos.creative-tim.com/notus-js/assets/img/google.svg"/>Google</button>
-         
-      </div>
+      <SocileLogin></SocileLogin>
     </div>
   </div>
 </div>

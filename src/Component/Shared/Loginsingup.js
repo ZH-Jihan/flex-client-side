@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Loginsingup = () => {
   return (
@@ -32,7 +33,6 @@ const Loginsingup = () => {
                 </h2>
                 <p class="mt-10 text-4xl text-gray-200">Join Twitter today.</p>
               </div>
-              <div class="flex flex-row justify-center items-center space-x-3"></div>
               <div>
                 <a href="/registar">
                 <button
@@ -44,14 +44,14 @@ const Loginsingup = () => {
                 </a>
               </div>
               <div>
-                <a href="/login">
+                <Link to="/login">
                 <button
                   type="submit"
                   class="lg:w-3/5 w-full flex justify-center border-indigo-600 bg-transparent text-gray-100 p-4 border rounded-full tracking-wide font-semibold  focus:outline-none focus:shadow-outline hover:bg-gray-900 shadow-lg cursor-pointer transition ease-in duration-300"
                 >
                   Log in
                 </button>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
