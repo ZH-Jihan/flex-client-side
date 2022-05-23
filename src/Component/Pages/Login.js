@@ -1,7 +1,55 @@
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { useRef } from "react";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import toast from "react-hot-toast";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
+import Loading from "../Shared/Loading";
 import SocileLogin from '../Shared/SocileLogin';
  
 const Login = () => {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  let errorElement;
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+  const resetPassword = async () => {
+    const email = emailRef.current.value;
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast.success('Varification Email Sent');
+    } else {
+      toast.error('Please enter your email address');
+    }
+  };
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    await signInWithEmailAndPassword(email, password);
+    const { data } = await axios.post(
+      "",
+      { email }
+    );
+    localStorage.setItem("accessToken", data.accessToken);
+    navigate(from, { replace: true });
+
+    event.target.reset();
+  };
+  if (error) {
+    errorElement = <p className="text-danger">Error: {error?.message}</p>;
+  }
+  if (loading || sending) {
+    return <Loading></Loading>;
+  }
+  if (user) {
+    navigate(from, { replace: true });
+  }
   return (
     <section class="bg-blueGray-50">
       <div class="w-full lg:w-4/12 px-4 mx-auto pt-6">
@@ -14,7 +62,7 @@ const Login = () => {
             <div class="divider">OR</div>
           </div>
           <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-            <form className="pb-4">
+            <form onSubmit={handleLogin} className="pb-4">
               <div class="relative w-full mb-3">
                 <label
                   class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
@@ -23,9 +71,12 @@ const Login = () => {
                   Email
                 </label>
                 <input
+                  ref={emailRef}
+                  name="email"
                   type="email"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   placeholder="Email"
+                  required
                 />
               </div>
               <div class="relative w-full mb-3">
@@ -37,8 +88,11 @@ const Login = () => {
                 </label>
                 <input
                   type="password"
+                  ref={passwordRef}
+                  name="password"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   placeholder="Password"
+                  required
                 />
               </div>
               <div className="flex justify-between">
@@ -54,14 +108,13 @@ const Login = () => {
                     </span>
                   </label>
                 </div>
-                <span class="text-sm text-blue-700 hover:underline cursor-pointer">
+                <a onClick={resetPassword} class="link text-sm text-blue-700 hover:underline cursor-pointer">
                   Forgot password?
-                </span>
+                </a>
               </div>
               <div class="text-center mt-6">
-                <button
+                <button type='submit'
                   class="btn text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                  type="button"
                 >
                   {" "}
                   Log In{" "}

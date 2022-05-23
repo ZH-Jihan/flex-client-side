@@ -13,6 +13,7 @@ const Navber = () => {
   };
     const menuitem = <>
         <li><Link to="/home">Home</Link></li>
+        <li><Link to="/product">Product</Link></li>
         <li><Link to="/dashbord">Dashbord</Link></li>
         <li><Link to="/blog">Blog</Link></li>
         <li><Link to="/contact">Contact</Link></li>
@@ -24,7 +25,7 @@ const Navber = () => {
         <button className="btn " type="submit">Search</button>
       </form>
         <li>{user ? (
-          <button class="btn btn-ghost text-xl" onClick={handleSignOut}>Log Out</button>
+          <button class="btn btn-ghost text-lg" onClick={handleSignOut}>Log Out</button>
         ) : (
           <Link to="/login">Log in</Link>
         )}</li>
@@ -45,14 +46,14 @@ const Navber = () => {
     
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal   text-2xl pr-8">
+    <ul className="menu menu-horizontal   text-xl pr-8">
         {menuitem}
     </ul>
   </div>
   {user ? (
       <div class="avatar placeholder py-0">
       <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
-        <img src={user.photoURL} alt="" />
+        <img src={user?.photoURL} alt="" />
       </div>
     </div> 
     ):'' }
