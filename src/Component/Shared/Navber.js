@@ -1,21 +1,33 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/Logo/logo_new.png';
+import auth from '../../firebase.init';
 
 const Navber = () => {
+  const [user] = useAuthState(auth);
+  console.log(user)
+  const handleSignOut = () => {
+    signOut(auth);
+  };
     const menuitem = <>
         <li><Link to="/home">Home</Link></li>
         <li><Link to="/dashbord">Dashbord</Link></li>
         <li><Link to="/blog">Blog</Link></li>
         <li><Link to="/contact">Contact</Link></li>
         <li><Link to="/about">About</Link></li>
-        <form className="lg:flex sm:gap-y-4 gap-x-4 lg:pl-8 pr-8" role="search">
+        <form className="lg:flex sm:gap-y-4 gap-x-4 lg:pl-8 pr-8 items-center" role="search">
         <div className='form-control'>
           <input type="text" placeholder="Search" className="input" />
           </div>
         <button className="btn " type="submit">Search</button>
       </form>
-        <li><Link to="/login">Login</Link></li>
+        <li>{user ? (
+          <button class="btn btn-ghost text-xl" onClick={handleSignOut}>Log Out</button>
+        ) : (
+          <Link to="/login">Log in</Link>
+        )}</li>
     </>
     return (
         <div className="navbar bg-error text-white justify-around md:justify-around">
@@ -30,12 +42,20 @@ const Navber = () => {
       </ul>
     </div>
     <img src={logo} alt="" />
+    
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal   text-xl pr-8">
+    <ul className="menu menu-horizontal   text-2xl pr-8">
         {menuitem}
     </ul>
   </div>
+  {user ? (
+      <div class="avatar placeholder py-0">
+      <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
+        <img src={user.photoURL} alt="" />
+      </div>
+    </div> 
+    ):'' }
 </div>
     );
 };

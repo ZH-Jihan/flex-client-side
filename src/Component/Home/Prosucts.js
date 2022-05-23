@@ -1,11 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import useProduct from "../Hooks/useProduct";
 import Product from "./Product/Product";
 
 const Prosucts = () => {
   const [products] = useProduct();
-  const slicePeoducts = products.slice(0, 3);
+  const slicePeoducts = products.slice(0, 6);
 
   return (
     <div className="lg:px-12">
@@ -16,18 +15,18 @@ const Prosucts = () => {
         style={{ backgroundColor: "#F9FBFA" }}
       >
         <div className=" ">
-          <div className=" grid lg:grid-cols-3 gap-4 ">
+          <div className=" grid lg:grid-cols-3 md:grid-cols-2 gap-4 ">
             {slicePeoducts.map((product) => (
               <Product key={product.id} product={product}></Product>
             ))}
           </div>
-          <div className=" pt-8 text-center">
+          {/* <div className=" pt-8 text-center">
             <Link to="/product">
               <button className="btn text-white  ">
                 See All Products
               </button>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

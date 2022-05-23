@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": 0,
     "name": "Multitool",
     "img": "https://www.flex-tools.com/fileadmin/user_upload/_09A0749_.jpg",
     "description": "The new multitool can be used for a wide range of applications, such as sawing, cutting, cutting out wood, metal, plastic and plasterboard.",
@@ -42,7 +42,7 @@
   {
     "id": 5,
     "name": "Delta sander with speed control",
-    "img": "https://www.flex-tools.com/fileadmin/flex-tools.com/media/News/Neuheiten/OSE-2-80_Einhand-Schwingschleifer_integrierte-Eigenabsaugung_Schleifer_FLEX.jpg",
+    "img": "https://www.flex-tools.com/fileadmin/flex-tools.com/media/News/Neuheiten/ODE-2-100_Einhand-Deltaschleifer_integrierte-Eigenabsaugung_Schleifer_FLEX.jpg",
     "description": "Compact, lightweight, ergonomic: One-handed delta sander ODE 2-100 EC. Unique flexibility thanks to multi-hole pad for holding all sandpapers with 125mm diameter.",
     "price": "€ 312",
     "quantity": "8000"
