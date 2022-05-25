@@ -1,10 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Product = (props) => {
+const Product = ({setOrder,product}) => {
   const navigate = useNavigate();
-  const { product } = props;
-  const navigateToDetail = (id) => {
+  
+  const navigateToDetail = (id,setOrder,product) => {
     navigate(`/product/${id}`);
   };
   return (
@@ -19,7 +19,7 @@ const Product = (props) => {
         <h2 className="card-title">{product.name}</h2>
         <p>{product.description}</p>
         <div className="card-actions justify-center pt-4 ">
-          <button onClick={() => navigateToDetail(product._id)} className="btn text-white w-full">Go To Product</button>
+          <button onClick={() => navigateToDetail(product._id , setOrder ,product)} className="btn text-white w-full">Go To Product</button>
         </div>
       </div>
     </div>

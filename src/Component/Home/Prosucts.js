@@ -5,7 +5,7 @@ import Product from "./Product/Product";
 
 const Prosucts = () => {
   const [products] = useProduct();
-  console.log(products);
+  
   const slicePeoducts = products.slice(0,3);
 
   return (

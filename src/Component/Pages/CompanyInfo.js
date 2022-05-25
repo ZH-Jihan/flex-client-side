@@ -6,7 +6,7 @@ const CompanyInfo = () => {
       <div class="hero-content ">
         <div class="lg:px-12 py-8">
           <h1 class="text-5xl font-bold text-error">FLEX - this is proformance</h1>
-          <div className="flex gap-12 py-6">
+          <div className="flex sm:flex-col gap-12 py-6">
             <p class="py-6">
               Always keep at it, show full commitment and thus celebrate success
               over again: This is what drives not only our customers but also

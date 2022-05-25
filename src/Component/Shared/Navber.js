@@ -52,7 +52,8 @@ const Navber = () => {
   {user ? (
       <div class="avatar placeholder py-0">
       <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
-        <img src={user?.photoURL} alt="" />
+        {user.photoURL ? <img src={user?.photoURL} alt="" /> : <img src="https://findicons.com/files/icons/61/dragon_soft/128/user.png" alt="" />
+        }
       </div>
     </div> 
     ):'' }

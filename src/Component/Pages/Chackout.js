@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Chackout = () => {
+const Chackout = ({product}) => {
     
     return (
 <div>

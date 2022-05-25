@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
+import Order from "./chack";
 import Home from "./Component/Home/Home";
 import About from "./Component/Pages/About";
 import AllProduct from "./Component/Pages/AllProduct";
 import Blog from "./Component/Pages/Blog";
 import Chackout from "./Component/Pages/Chackout";
 import Dashbord from "./Component/Pages/Dashbord/Dashbord";
+import OrderTabel from "./Component/Pages/Dashbord/OrderTabel";
 import Pofile from "./Component/Pages/Dashbord/Pofile";
-import Uhome from "./Component/Pages/Dashbord/Uhome";
 import Login from "./Component/Pages/Login";
+import Payment from "./Component/Pages/Modal/Payment";
 import Notpound from "./Component/Pages/Notpound";
 import ProductDetail from "./Component/Pages/ProductDetail";
 import Registar from "./Component/Pages/Registar";
@@ -34,15 +36,18 @@ function App() {
       <div>
       <Navber></Navber>
       <Routes>
+        <Route path="/check" element={<Order></Order>}></Route>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
+        <Route path="/payment" element={<Payment></Payment>}></Route>
         <Route path="/product" element={<AllProduct></AllProduct>}></Route>
         <Route path="/dashbord" element={
         <RequireAuth>
             <Dashbord></Dashbord>
         </RequireAuth>}>
           <Route index element={<Pofile></Pofile>}></Route>
-          <Route path="/dashbord/home" element={<Uhome></Uhome>}></Route>
+          <Route path="/dashbord/home" element={<Pofile></Pofile>}></Route>
+          <Route path="/dashbord/myorder" element={<OrderTabel></OrderTabel>}></Route>
         </Route>
         <Route path="/product/:id" element={<RequireAuth>
           <ProductDetail></ProductDetail>
