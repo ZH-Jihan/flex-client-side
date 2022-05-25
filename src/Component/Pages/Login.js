@@ -42,7 +42,7 @@ const Login = () => {
     event.target.reset();
   };
   if (error) {
-    errorElement = <p className="text-danger">Error: {error?.message}</p>;
+     toast.error(error?.message)
   }
   if (loading || sending) {
     return <Loading></Loading>;

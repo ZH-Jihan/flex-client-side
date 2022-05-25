@@ -5,15 +5,20 @@ import Home from "./Component/Home/Home";
 import About from "./Component/Pages/About";
 import AllProduct from "./Component/Pages/AllProduct";
 import Blog from "./Component/Pages/Blog";
+import Chackout from "./Component/Pages/Chackout";
+import Dashbord from "./Component/Pages/Dashbord/Dashbord";
+import Pofile from "./Component/Pages/Dashbord/Pofile";
+import Uhome from "./Component/Pages/Dashbord/Uhome";
 import Login from "./Component/Pages/Login";
 import Notpound from "./Component/Pages/Notpound";
+import ProductDetail from "./Component/Pages/ProductDetail";
 import Registar from "./Component/Pages/Registar";
 import Footer from "./Component/Shared/Footer";
 import Loading from "./Component/Shared/Loading";
 import Navber from './Component/Shared/Navber';
+import RequireAuth from "./Component/Shared/RequireAuth";
 
 function App() {
-  
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
@@ -32,6 +37,19 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/product" element={<AllProduct></AllProduct>}></Route>
+        <Route path="/dashbord" element={
+        <RequireAuth>
+            <Dashbord></Dashbord>
+        </RequireAuth>}>
+          <Route index element={<Pofile></Pofile>}></Route>
+          <Route path="/dashbord/home" element={<Uhome></Uhome>}></Route>
+        </Route>
+        <Route path="/product/:id" element={<RequireAuth>
+          <ProductDetail></ProductDetail>
+        </RequireAuth>}></Route>
+        <Route path="/chackout" element={<RequireAuth>
+          <Chackout></Chackout>
+        </RequireAuth>}></Route>
         <Route path="/about" element={<About></About>} ></Route>
         <Route path="/blog" element={<Blog/>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>

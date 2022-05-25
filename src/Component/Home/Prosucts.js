@@ -5,6 +5,7 @@ import Product from "./Product/Product";
 
 const Prosucts = () => {
   const [products] = useProduct();
+  console.log(products);
   const slicePeoducts = products.slice(0,3);
 
   return (
@@ -18,7 +19,7 @@ const Prosucts = () => {
         <div className=" ">
           <div className=" grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 justify-items-center">
             {slicePeoducts.map((product) => (
-              <Product key={product.id} product={product}></Product>
+              <Product key={product._id} product={product}></Product>
             ))}
           </div>
           <div className=" pt-8 text-center">

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import toast from 'react-hot-toast';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from './Loading';
@@ -16,15 +17,13 @@ const SocileLogin = () => {
   
     const navigate = useNavigate();
     let from = location.state?.from?.pathname || "/";
-  
-    let errorElement;
-  
+
     if (loading) {
       return <Loading></Loading>;
     }
   
     if (error) {
-      errorElement = <p className="text-danger">Error: {error?.message} </p>;
+      toast.error(error?.message)
     }
   
     if (user) {

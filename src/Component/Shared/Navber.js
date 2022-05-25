@@ -7,14 +7,13 @@ import auth from '../../firebase.init';
 
 const Navber = () => {
   const [user] = useAuthState(auth);
-  console.log(user)
   const handleSignOut = () => {
     signOut(auth);
   };
     const menuitem = <>
         <li><Link to="/home">Home</Link></li>
         <li><Link to="/product">Product</Link></li>
-        <li><Link to="/dashbord">Dashbord</Link></li>
+        {user && <li><Link to="/dashbord">Dashbord</Link></li>}
         <li><Link to="/blog">Blog</Link></li>
         <li><Link to="/contact">Contact</Link></li>
         <li><Link to="/about">About</Link></li>
