@@ -1,10 +1,9 @@
 import React from 'react';
 import CompanyInfo from '../Pages/CompanyInfo';
 import Summary from '../Pages/Summary';
-import Banar from './Banar';
 import Carosol from './Carosol';
-import Info from './Info';
 import Prosucts from './Prosucts';
+import Warinty from './Warinty';
 
 const Home = () => {
     return (
@@ -13,8 +12,7 @@ const Home = () => {
             <Prosucts></Prosucts>
             <CompanyInfo></CompanyInfo>
             <Summary></Summary>
-            <Banar></Banar>
-            <Info></Info>
+            <Warinty></Warinty>
         </div>
     );
 };

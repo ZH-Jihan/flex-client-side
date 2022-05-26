@@ -1,22 +1,60 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
 const Pofile = () => {
+  const [user] = useAuthState(auth)
     return (
-        <div class="w-full ">
-          <h1 class="text-2xl font-semibold">All Courses</h1>
-          <div class="md:flex mt-4 space-x-4  justify-center">
-            <div class="h-96 bg-gradient-to-r from-indigo-600 to-purple-500 flex items-end rounded-md">
-              <p class="text-lg text-indigo-50">
-                How to do Basic Jumping and how to landing safely
-              </p>
-            </div>
-            <div class="h-96 bg-gradient-to-r from-yellow-600 to-red-500 flex items-end rounded-md">
-              <p class="text-lg text-indigo-50">
-                How to do Basic Jumping and how to landing safely
-              </p>
-            </div>
+      <div className="flex justify-center m-10  text-center">
+      <div className="">
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text ">Your location </span>
+          </label>
+          <input
+            type="text"
+            placeholder="location "
+            name="location"
+            class="input input-bordered"
+            required
+          />
+        </div>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text ">Your Education</span>
+          </label>
+          <input
+            type="text"
+            placeholder="education"
+            name="education"
+            class="input input-bordered"
+            required
+          />
+        </div>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text ">Social profile link</span>
+          </label>
+          <input type="text"
+          name='socialLink'
+          placeholder="Social link" class="input input-bordered" 
+          required />
+        </div>
+      </div>
+      <div className="">
+        <div className="">
+          <div class="avatar">
+          {user.photoURL ? <img class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2" src={user?.photoURL} alt="" /> : <img class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"src="https://findicons.com/files/icons/61/dragon_soft/128/user.png" alt="" />
+        }
           </div>
         </div>
+        <div className="ml-5">
+          <p>Name: {user.displayName}</p>
+          <p>userId: {user.metadata?.createdAt}</p>
+          <p>Email: {user.email}</p>
+        </div>
+      </div>
+    </div>
     );
 };
 

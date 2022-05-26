@@ -29,8 +29,8 @@ const OrderTabel = () => {
 					<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">Edit</button>
 					<button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded px-4">Delete</button>
 				</td>
-			</tr>
-            ))
+			</tr>)
+            )
         }
         </tbody>
 	</table>

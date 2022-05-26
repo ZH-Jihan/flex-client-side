@@ -15,23 +15,7 @@ const Dashbord = () => {
           </h1>
           <ul>
             <li>
-              <Link className="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150" to='/dashbord/home'>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                />
-              </svg>
-              <span class="font-semibold">Home</span>
-              </Link>
+              
             </li>
             <Link to='/dashbord/myorder' class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
               <svg
@@ -50,7 +34,7 @@ const Dashbord = () => {
               </svg>
               <span class="font-semibold">My Product</span>
             </Link>
-            <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
+            <Link to='/dashbord/myprofile' class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6"
@@ -68,8 +52,8 @@ const Dashbord = () => {
                 />
               </svg>
               <span class="font-semibold">My Review</span>
-            </li>
-            <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
+            </Link>
+            <Link to='/dashbord/myprofile' class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6"
@@ -85,7 +69,7 @@ const Dashbord = () => {
                 />
               </svg>
               <span class="font-semibold">My Profile</span>
-            </li>
+            </Link>
             <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

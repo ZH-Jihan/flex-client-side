@@ -71,6 +71,7 @@ const ProductDetail = () => {
             <li>{product.productdetail?.detaildetail?.detail4}</li>
             <li>{product.productdetail?.detaildetail?.detail5}</li>
           </ul>
+          <p>Abelabile Product : {product.quantity}</p>
           <label for="booking-modal" onClick={()=>{setOrder(product)}} class="btn btn-primary">Order</label>
         </div>
       </div>

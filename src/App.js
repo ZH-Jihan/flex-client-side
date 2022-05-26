@@ -46,7 +46,7 @@ function App() {
             <Dashbord></Dashbord>
         </RequireAuth>}>
           <Route index element={<Pofile></Pofile>}></Route>
-          <Route path="/dashbord/home" element={<Pofile></Pofile>}></Route>
+          <Route path="/dashbord/myprofile" element={<Pofile></Pofile>}></Route>
           <Route path="/dashbord/myorder" element={<OrderTabel></OrderTabel>}></Route>
         </Route>
         <Route path="/product/:id" element={<RequireAuth>
