@@ -7,7 +7,9 @@ import About from "./Component/Pages/About";
 import AllProduct from "./Component/Pages/AllProduct";
 import Blog from "./Component/Pages/Blog";
 import Chackout from "./Component/Pages/Chackout";
+import Addreview from "./Component/Pages/Dashbord/Addreview";
 import Dashbord from "./Component/Pages/Dashbord/Dashbord";
+import MakeAdmin from "./Component/Pages/Dashbord/MakeAdmin";
 import OrderTabel from "./Component/Pages/Dashbord/OrderTabel";
 import Pofile from "./Component/Pages/Dashbord/Pofile";
 import Login from "./Component/Pages/Login";
@@ -41,12 +43,11 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/payment" element={<Payment></Payment>}></Route>
         <Route path="/product" element={<AllProduct></AllProduct>}></Route>
-        <Route path="/dashbord" element={
-        <RequireAuth>
-            <Dashbord></Dashbord>
-        </RequireAuth>}>
+        <Route path="/dashbord" element={<RequireAuth><Dashbord></Dashbord></RequireAuth>}>
           <Route index element={<Pofile></Pofile>}></Route>
           <Route path="/dashbord/myprofile" element={<Pofile></Pofile>}></Route>
+          <Route path="/dashbord/myreview" element={<Addreview></Addreview>}></Route>
+          <Route path="/dashbord/makeadmin" element={<MakeAdmin></MakeAdmin>}></Route>
           <Route path="/dashbord/myorder" element={<OrderTabel></OrderTabel>}></Route>
         </Route>
         <Route path="/product/:id" element={<RequireAuth>

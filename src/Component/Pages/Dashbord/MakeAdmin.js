@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
-import Loading from "../Shared/Loading";
+import Loading from '../../Shared/Loading';
 import AdminRole from './AdminRole';
 
 const MakeAdmin = () => {
@@ -9,7 +9,7 @@ const MakeAdmin = () => {
       data: users,
       isLoading,
       refetch,
-    } = useQuery("users", () =>
+    } = useQuery("user", () =>
       fetch("http://localhost:5000/user", {
         method: "GET",
         headers: {

@@ -10,9 +10,9 @@ const Booking = ({product,order,setOrder}) => {
     const handleBooking = event => {
         event.preventDefault();
         const orderQuantity=event.target.orderQuantity?.value;
-        if (product.Minorder > orderQuantity) {
+        if (parseInt(product.Minorder) > orderQuantity) {
             toast.error(`Please Minimum products order : ${product.Minorder}`);
-          } else if (product.quantity < orderQuantity) {
+          } else if (parseInt(product.quantity) < orderQuantity) {
             toast.error(`Available Stock Products  : ${product.quantity}`);
           }else{
             const booking = {

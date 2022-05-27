@@ -2,10 +2,11 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
 import auth from "../../../firebase.init";
+import useAdmin from "../../Hooks/Admin";
 
 const Dashbord = () => {
     const [user] = useAuthState(auth);
-    console.log(user);
+     const [admin] = useAdmin(user)
   return (
     <div class="flex flex-col lg:flex-row">
       <div class="flex w-2/5 md:w-1/4 bg-white">
@@ -34,7 +35,7 @@ const Dashbord = () => {
               </svg>
               <span class="font-semibold">My Product</span>
             </Link>
-            <Link to='/dashbord/myprofile' class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
+            <Link to='/dashbord/myreview' class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6"
@@ -70,6 +71,25 @@ const Dashbord = () => {
               </svg>
               <span class="font-semibold">My Profile</span>
             </Link>
+            { admin && (
+              <>
+                <Link to='/dashbord/makeadmin' class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                />
+              </svg>
+              <span class="font-semibold">Make Admin</span>
+            </Link>
             <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -87,6 +107,26 @@ const Dashbord = () => {
               </svg>
               <span class="font-semibold">Setthing</span>
             </li>
+            <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                />
+              </svg>
+              <span class="font-semibold">Setthing</span>
+            </li>
+              </>
+            )
+            }
             <button class="w-full mt-10 bg-[#EC5252] rounded-full py-1.5 text-white">
               Learn
             </button>

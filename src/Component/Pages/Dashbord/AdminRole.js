@@ -3,6 +3,7 @@ import toast from 'react-hot-toast';
 
 const AdminRole = ({ user, refetch,index }) => {
   const { email, role } = user;
+  console.log(role);
   const makeAdmin = () => {
     fetch(`http://localhost:5000/admin/${email}`, {
       method: "PUT",
