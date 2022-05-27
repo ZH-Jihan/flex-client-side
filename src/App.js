@@ -7,6 +7,7 @@ import About from "./Component/Pages/About";
 import AllProduct from "./Component/Pages/AllProduct";
 import Blog from "./Component/Pages/Blog";
 import Chackout from "./Component/Pages/Chackout";
+import Addproduct from "./Component/Pages/Dashbord/Addproduct";
 import Addreview from "./Component/Pages/Dashbord/Addreview";
 import Dashbord from "./Component/Pages/Dashbord/Dashbord";
 import MakeAdmin from "./Component/Pages/Dashbord/MakeAdmin";
@@ -47,6 +48,7 @@ function App() {
           <Route index element={<Pofile></Pofile>}></Route>
           <Route path="/dashbord/myprofile" element={<Pofile></Pofile>}></Route>
           <Route path="/dashbord/myreview" element={<Addreview></Addreview>}></Route>
+          <Route path="/dashbord/addproduct" element={<Addproduct></Addproduct>}></Route>
           <Route path="/dashbord/makeadmin" element={<MakeAdmin></MakeAdmin>}></Route>
           <Route path="/dashbord/myorder" element={<OrderTabel></OrderTabel>}></Route>
         </Route>

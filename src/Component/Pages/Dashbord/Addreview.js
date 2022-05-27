@@ -9,38 +9,41 @@ const Addreview = () => {
     const [user] = useAuthState(auth)
     const img = user?.photoURL;
 
-    const handleOrder = (event) => {
+    const handleReview = (event) => {
       event.preventDefault();
 
-      const order = {
+      const reviewinfo = {
         name: event.target.name?.value,
         review:event.target.review?.value,
         img: img,
       };
 
-      console.log(order);
+      console.log(reviewinfo);
       fetch("http://localhost:5000/review", {
         method: "POST",
         headers: {
           "content-type": "application/json",
         },
 
-        body: JSON.stringify(order),
+        body: JSON.stringify(reviewinfo),
       })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
           if (data.insertedId) {
-            toast.success("Your Review Completed");
-          }
-          Navigate("/dashboard");
+            
           event.target.reset();
+          Navigate("/dashboard");
+            toast.success("Your Review Completed");
+            
+          }
+          
         });
     }
 
 
     return (
-      <form onSubmit={handleOrder}>
+      <form onSubmit={handleReview}>
         <div className="container mx-auto ">
           <div class="hero min-h-screen  ">
             <div class="hero-content flex-col lg:flex-row-reverse "></div>
@@ -54,7 +57,7 @@ const Addreview = () => {
                     type="text"
                     name="name"
                     placeholder="Your Name"
-                    class="input input-bordered"
+                    class="input input-breviewinfoed"
                   />
                 </div>
 
@@ -71,7 +74,7 @@ const Addreview = () => {
                 </div>
 
                 <div class="form-control mt-6">
-                  <button class="btn btn-primary text-white">Add product</button>
+                  <button type="submit" class="btn btn-primary text-white">Add product</button>
                 </div>
               </div>
             </div>

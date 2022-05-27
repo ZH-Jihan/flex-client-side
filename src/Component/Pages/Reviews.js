@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import Review from '../Home/Review';
 import Loading from '../Shared/Loading';
-import Review from './Review/Review';
 
 const Reviews = () => {
 
@@ -10,9 +10,8 @@ const Reviews = () => {
       isLoading,
       refetch,
     } = useQuery(["review"], () =>
-      fetch("http://localhost:5000/review").then((res) => res.json())
-    );
-      
+      fetch("http://localhost:5000/review").then((res) => res.json()))
+      console.log(reviews);
       if(isLoading){
         return <Loading />;
       }
