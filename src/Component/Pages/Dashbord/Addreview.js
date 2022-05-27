@@ -1,87 +1,83 @@
-import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import toast from 'react-hot-toast';
-import { Navigate } from 'react-router-dom';
-import auth from '../../../firebase.init';
+import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import toast from "react-hot-toast";
+import { Navigate } from "react-router-dom";
+import auth from "../../../firebase.init";
 
 const Addreview = () => {
+  const [user] = useAuthState(auth);
+  const img = user?.photoURL;
 
-    const [user] = useAuthState(auth)
-    const img = user?.photoURL;
+  const handleReview = (event) => {
+    event.preventDefault();
 
-    const handleReview = (event) => {
-      event.preventDefault();
+    const reviewinfo = {
+      name: event.target.name?.value,
+      review: event.target.review?.value,
+      img: img,
+    };
 
-      const reviewinfo = {
-        name: event.target.name?.value,
-        review:event.target.review?.value,
-        img: img,
-      };
+    console.log(reviewinfo);
+    fetch("http://localhost:5000/review", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
 
-      console.log(reviewinfo);
-      fetch("http://localhost:5000/review", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-
-        body: JSON.stringify(reviewinfo),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.insertedId) {
-            
+      body: JSON.stringify(reviewinfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
           event.target.reset();
+          toast.success("Your Review Completed");
           Navigate("/dashboard");
-            toast.success("Your Review Completed");
-            
-          }
           
-        });
-    }
+        }
+      });
+  };
 
-
-    return (
-      <form onSubmit={handleReview}>
-        <div className="container mx-auto ">
-          <div class="hero min-h-screen  ">
-            <div class="hero-content flex-col lg:flex-row-reverse "></div>
-            <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-accent ">
-              <div class="card-body">
-                <div class="form-control">
-                  <label class="label">
-                    <span class="label-text text-white">Name</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    class="input input-breviewinfoed"
-                  />
-                </div>
-
-                <div class="form-control">
-                  <label class="label">
-                    <span class="label-text text-white">Your review </span>
-                  </label>
-                  <textarea
-                    class="textarea textarea-accent"
-                    name="review"
-                    placeholder="review"
-                    required
-                  ></textarea>
-                </div>
-
-                <div class="form-control mt-6">
-                  <button type="submit" class="btn btn-primary text-white">Add product</button>
-                </div>
-              </div>
+  return (
+    <form onSubmit={handleReview}>
+      <div class="bg-indigo-50 min-h-screen md:px-20 pt-6">
+        <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
+          <h1 class="text-center text-2xl font-bold text-gray-500 mb-10">
+            ADD YOUR REVIEW
+          </h1>
+          <div class="space-y-4">
+            <div>
+              <label for="title" class="text-lx font-serif">
+                Name:
+              </label>
+              <input
+                type="text"
+                placeholder="Your Name"
+                name="name"
+                class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"
+              />
             </div>
+            <div>
+              <label for="description" class="block mb-2 text-lg font-serif">
+                Description:
+              </label>
+              <textarea
+              style={{height: "150px"}}
+                cols="30"
+                rows="10"
+                placeholder="whrite here.."
+                name="review"
+                class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"
+              ></textarea>
+            </div>
+            <button type="submit" class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600  ">
+              ADD REVIEW
+            </button>
           </div>
         </div>
-      </form>
-    );
+      </div>
+    </form>
+  );
 };
 
 export default Addreview;

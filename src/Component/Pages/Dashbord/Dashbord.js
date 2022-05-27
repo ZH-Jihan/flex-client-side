@@ -124,6 +124,23 @@ const Dashbord = () => {
               </svg>
               <span class="font-semibold">Add Product</span>
             </Link>
+            <Link to='/dashbord/manageproduct' class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                />
+              </svg>
+              <span class="font-semibold">Manage Product</span>
+            </Link>
               </>
             )
             }
@@ -134,28 +151,8 @@ const Dashbord = () => {
         </div>
       </div>
       <main class=" min-h-screen w-full">
-        <nav class="flex justify-between px-10 bg-white py-6">
-          <div class="flex items-center bg-gray-100 px-4 py-2 rounded-md space-x-3 w-96">
-            <input
-              type="text"
-              placeholder="search"
-              class="bg-gray-100 outline-none w-full"
-            />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 cursor-pointer text-gray-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
-          </div>
+        <nav class="flex lg:justify-end justify-center px-10 bg-white py-6">
+          
           <div class="flex items-center gap-2">
             {user.photoURL ? <img class="w-8 rounded-full" src={user?.photoURL} alt="" /> : <img class="w-8 rounded-full" src="https://findicons.com/files/icons/61/dragon_soft/128/user.png" alt="" />
         }
