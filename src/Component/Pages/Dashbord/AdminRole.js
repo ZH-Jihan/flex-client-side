@@ -23,8 +23,7 @@ const AdminRole = ({ user, refetch,index }) => {
           toast.success(`Successfully made an admin`);
         }
       }); 
-  };
-
+  }
   return (
  
       <tr>
@@ -38,7 +37,7 @@ const AdminRole = ({ user, refetch,index }) => {
           )}
         </td>
         <td>
-          <button class="btn btn-xs">Remove User</button>
+          <button  class="btn btn-xs">Remove User</button>
         </td>
       </tr>
   );
