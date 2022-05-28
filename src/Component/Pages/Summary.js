@@ -7,7 +7,7 @@ const Summary = () => {
     <div className="lg:w-10/12 m-auto py-12 px-8 text-center">
         <h1 className='text-3xl font-bold py-2'>Millions Delar & Customer Trust Us</h1>
         <p className='font-bold text-xl pb-8'>Try to understand user expecation</p>
-      <div class="stats shadow lg:w-full grid  md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class="stats shadow lg:w-full grid   lg:grid-cols-4 gap-6">
         <div class="stat">
           <div class="stat-figure text-primary">
           <FontAwesomeIcon icon={faFlag} className="h-11 text-primary"></FontAwesomeIcon>

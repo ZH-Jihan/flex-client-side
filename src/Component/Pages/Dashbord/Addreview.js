@@ -64,6 +64,7 @@ const Addreview = () => {
                 Description:
               </label>
               <textarea
+              required
                 style={{ height: "110px" }}
                 cols="30"
                 rows="10"
