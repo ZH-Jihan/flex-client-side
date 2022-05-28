@@ -17,7 +17,7 @@ const Addproduct = () => {
           quantity: event.target.availableQquantity?.value,
           img: event.target.img?.value,
         };
-        fetch("http://localhost:5000/product", {
+        fetch("https://warm-wave-77383.herokuapp.com/product", {
           method: "POST",
           headers: {
             "content-type": "application/json",

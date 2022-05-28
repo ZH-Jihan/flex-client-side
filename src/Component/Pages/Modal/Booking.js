@@ -26,7 +26,7 @@ const Booking = ({product,order,setOrder}) => {
                 orderQuantity: orderQuantity,
             }
     
-            fetch('http://localhost:5000/order', {
+            fetch('https://warm-wave-77383.herokuapp.com/order', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
