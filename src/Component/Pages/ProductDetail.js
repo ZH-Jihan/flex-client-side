@@ -10,9 +10,11 @@ const ProductDetail = () => {
   console.log(product);
   const [order , setOrder] = useState(null)
   return (
-    <div class="bg-base-200">
+    <div class="py-8 bg-base-200">
+      <div className="px-16 ">
       <h1 class="text-5xl font-bold">{product.productdetail?.detailhedar}</h1>
       <p>{product.productdetail?.smallhedar}</p>
+      </div>
       <div class="hero  bg-base-200">
       <div class="hero-content flex-col lg:flex-row">
         <div >
@@ -21,7 +23,7 @@ const ProductDetail = () => {
             className=" md:max-w-2xl rounded-lg shadow-2xl"
             alt=""
           />
-          <div class="stats shadow gap-4 md:max-w-2xl rounded-lg">
+         {product.menuimg && <div class="stats shadow gap-4 md:max-w-2xl rounded-lg">
             <div class="stat p-4">
               <img src={product.menuimg?.img1} alt="" />
             </div>
@@ -40,11 +42,11 @@ const ProductDetail = () => {
             <div class="stat p-4">
               <img src={product.menuimg?.img6} alt="" />
             </div>
-          </div>
+          </div>}
         </div>
         <div>
-          <h1 class="text-5xl font-bold">Box Office News!</h1>
-          <div class="stats shadow gap-4 md:max-w-2xl rounded-lg">
+          <h1 class="text-5xl font-bold pb-5">{product.name}</h1>
+          {product.listimg && <div class="stats shadow gap-4 md:max-w-2xl rounded-lg">
             <div class="stat">
               <img src={product.listimg?.img1} alt="" />
             </div>
@@ -63,15 +65,18 @@ const ProductDetail = () => {
             <div class="stat">
               <img src={product.listimg?.img6} alt="" />
             </div>
-          </div>
-          <ul class="py-6">
+          </div>}
+          {product.productdetail ? (<ul class="py-6 pb-2">
             <li>{product.productdetail?.detaildetail?.detail1}</li>
             <li>{product.productdetail?.detaildetail?.detail2}</li>
             <li>{product.productdetail?.detaildetail?.detail3}</li>
             <li>{product.productdetail?.detaildetail?.detail4}</li>
             <li>{product.productdetail?.detaildetail?.detail5}</li>
-          </ul>
+          </ul>) : 
+          (<p class="py-6 pb-2">{product.description}</p>)
+          }
           <p>Abelabile Product : {product.quantity}</p>
+          <p className="pb-3"><strong>Per Product Price :</strong> $ {product.price}</p>
           <label for="booking-modal" onClick={()=>{setOrder(product)}} class="btn btn-primary">Order</label>
         </div>
       </div>

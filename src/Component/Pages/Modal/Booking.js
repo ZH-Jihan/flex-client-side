@@ -19,7 +19,7 @@ const Booking = ({product,order,setOrder}) => {
                 productId: _id,
                 img : img,
                 productName: name,
-                price,
+                price : orderQuantity * price,
                 customarmail: user.email,
                 customarName: user.displayName,
                 phone: event.target.phone.value,
@@ -50,11 +50,11 @@ const Booking = ({product,order,setOrder}) => {
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
                     <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 className="font-bold text-lg text-secondary">Booking for: {name}</h3>
                     <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 justify-items-center mt-2'>
                         <input type="text" name="name" disabled value={user?.displayName || ''} className="input input-bordered w-full max-w-xs" />
                         <input type="email" name="email" disabled value={user?.email || ''} className="input input-bordered w-full max-w-xs" />
                         <input type="text" name="pname"  disabled value={`Product Name : ${name}`} className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name="peice"  disabled value={`Product Price : $ ${price}`} className="input input-bordered w-full max-w-xs" />
                         <input
                       type="number"
                       name="orderQuantity"

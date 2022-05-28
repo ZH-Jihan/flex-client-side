@@ -13,6 +13,7 @@ const Addreview = () => {
 
     const reviewinfo = {
       name: event.target.name?.value,
+      ratings: event.target.rating?.value,
       review: event.target.review?.value,
       img: img,
     };
@@ -33,7 +34,6 @@ const Addreview = () => {
           event.target.reset();
           toast.success("Your Review Completed");
           Navigate("/dashboard");
-          
         }
       });
   };
@@ -47,14 +47,16 @@ const Addreview = () => {
           </h1>
           <div class="space-y-4">
             <div>
-              <label for="title" class="text-lx font-serif">
+              <label for="title" class="text-lg font-bold ">
                 Name:
               </label>
               <input
+                disabled
+                value={user.displayName}
                 type="text"
                 placeholder="Your Name"
                 name="name"
-                class="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"
+                class="ml-2 outline-none py-1 px-2 text-md font-bold border-2 rounded-md"
               />
             </div>
             <div>
@@ -62,7 +64,7 @@ const Addreview = () => {
                 Description:
               </label>
               <textarea
-              style={{height: "150px"}}
+                style={{ height: "110px" }}
                 cols="30"
                 rows="10"
                 placeholder="whrite here.."
@@ -70,7 +72,24 @@ const Addreview = () => {
                 class="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"
               ></textarea>
             </div>
-            <button type="submit" class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600  ">
+            <div>
+              <label for="title" class="text-lg font-bold ">
+                Rating Here:
+              </label>
+              <input
+                required
+                type="number"
+                max={5}
+                min={1}
+                placeholder="Your Rating"
+                name="rating"
+                class="ml-2 outline-none py-1 px-2 text-md  border-2 rounded-md"
+              />
+            </div>
+            <button
+              type="submit"
+              class=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600  "
+            >
               ADD REVIEW
             </button>
           </div>

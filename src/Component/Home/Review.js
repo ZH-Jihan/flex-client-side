@@ -1,46 +1,36 @@
-import React from 'react';
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+
+const Review = ({ reviews }) => {
+  const { name, review, ratings, img } = reviews;
+  const ratingsIcon = [];
+  for (var i = 1; i <= ratings; i++) {
+    ratingsIcon.push(<FontAwesomeIcon icon={faStar}></FontAwesomeIcon>);
+  }
 
 
-const Review = (props) => {
-    
-    const { name, img, review, } = props.review;
-    return (
-      <div className="">
-        <div class="card lg:max-w-lg  bg-accent text-white shadow-xl m-2 mt-8 ">
-          <div class="avatar p-5 ">
-            {img ? (
-              <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src={img} alt=''/>
-              </div>
-            ) : (
-              <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img
-                  src={
-                    "https://findicons.com/files/icons/61/dragon_soft/128/user.png"
-                  }
-                  alt=''
-                />
-              </div>
-            )}
+  return (
+    <div>
+      <div class="card w-full  bg-base-100 shadow-xl">
+        <div class="card-body">
+          <div class="avatar mx-auto ">
+            <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 ">
+            {img ? <img class="w-8 rounded-full" src={img} alt="" /> : <img class="w-8 rounded-full" src="https://findicons.com/files/icons/61/dragon_soft/128/user.png" alt="" />
+        }
+            </div>
           </div>
-          <div class="card-body">
-            <p class="card-title">{name}</p>
-            <p>
-            <div>
-        <div class="rating">
-          <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
-          <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
-          <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" checked />
-          <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
-          <input type="radio" name="rating-4" class="mask mask-star-2 bg-green-500" />
+          <h2 class="card-title">{name}</h2>
+          <p className="text-left">
+            {ratingsIcon.map((ratingIcon) => (
+              <span className="text-amber-500 mr-1">{ratingIcon}</span>
+            ))}
+          </p>
+          <p className="text-left">" {review} "</p>
         </div>
       </div>
-            </p>
-            <p>{review}</p>
-          </div>
-        </div>
-      </div>
-    );
+    </div>
+  );
 };
 
 export default Review;

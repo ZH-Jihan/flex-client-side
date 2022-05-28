@@ -6,7 +6,7 @@ const Order = () => {
     const [orders , setOrders] = useState([]);
     const [user] = useAuthState(auth);
     useEffect(() =>{
-        fetch(`http://localhost:5000/order?email=${user.email}`)
+        fetch(`http://localhost:5000/order/${user.email}`)
         .then((res) => res.json())
         .then((data) => {
             setOrders(data)
@@ -15,4 +15,4 @@ const Order = () => {
     return [orders , setOrders]
 };
 
-export default  Order
+export default  Order;

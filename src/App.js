@@ -17,7 +17,7 @@ import ManageProducts from "./Component/Pages/Dashbord/ManageProduct";
 import OrderTabel from "./Component/Pages/Dashbord/OrderTabel";
 import Pofile from "./Component/Pages/Dashbord/Pofile";
 import Login from "./Component/Pages/Login";
-import Payment from "./Component/Pages/Modal/Payment";
+// import Payment from "./Component/Pages/Modal/Payment";
 import Notpound from "./Component/Pages/Notpound";
 import ProductDetail from "./Component/Pages/ProductDetail";
 import Registar from "./Component/Pages/Registar";
@@ -45,13 +45,14 @@ function App() {
         <Route path="/check" element={<Order></Order>}></Route>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
-        <Route path="/payment" element={<Payment></Payment>}></Route>
+        {/* <Route path="/payment" element={<Payment></Payment>}></Route> */}
         <Route path="/product" element={<AllProduct></AllProduct>}></Route>
         <Route path="/blog" element={<Blogs></Blogs>}></Route>
         <Route path="/dashbord" element={<RequireAuth><Dashbord></Dashbord></RequireAuth>}>
           <Route index element={<Pofile></Pofile>}></Route>
           <Route path="/dashbord/myprofile" element={<Pofile></Pofile>}></Route>
           <Route path="/dashbord/myreview" element={<Addreview></Addreview>}></Route>
+          <Route path="/dashbord/payment/:id" element={<Chackout></Chackout>}></Route>
           <Route path="/dashbord/addproduct" element={<Addproduct></Addproduct>}></Route>
           <Route path="/dashbord/allorder" element={<AllOrder></AllOrder>}></Route>
           <Route path="/dashbord/manageproduct" element={<ManageProducts></ManageProducts>}></Route>
@@ -60,9 +61,6 @@ function App() {
         </Route>
         <Route path="/product/:id" element={<RequireAuth>
           <ProductDetail></ProductDetail>
-        </RequireAuth>}></Route>
-        <Route path="/chackout" element={<RequireAuth>
-          <Chackout></Chackout>
         </RequireAuth>}></Route>
         <Route path="/about" element={<About></About>} ></Route>
         <Route path="/blog" element={<Blog/>}></Route>

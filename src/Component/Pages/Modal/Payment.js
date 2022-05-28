@@ -1,9 +1,9 @@
 import React from "react";
-const Payment = () => {
+const Payment = ({paymentdetail}) => {
   return (
     <div>
       <input type="checkbox" id="payment-modal" class="modal-toggle" />
-      <div class="modal modal-middle">
+      <div class="modal modal-middle modal-box">
         <div
           className=" py-12  transition duration-150 ease-in-out z-10 absolute top-0 right-0 bottom-0 left-0"
           id="payment-modal"
@@ -41,9 +41,22 @@ const Payment = () => {
                 Owner Name
               </label>
               <input
+              disabled
                 id="name"
-                className="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
-                placeholder="James"
+                className="text-lg mb-5 mt-2  focus:outline-none focus:border font-normal w-full h-10 flex items-center pl-3 border-gray-300 rounded border"
+                value={paymentdetail.customarName}
+              />
+              <label
+                htmlFor="name"
+                className="text-gray-800 text-sm font-bold leading-tight tracking-normal"
+              >
+                Owner Name
+              </label>
+              <input
+              disabled
+                id="name"
+                className="text-lg mb-5 mt-2  focus:outline-none focus:border font-normal w-full h-10 flex items-center pl-3 border-gray-300 rounded border"
+                value={paymentdetail.customarName}
               />
               <label
                 htmlFor="email2"

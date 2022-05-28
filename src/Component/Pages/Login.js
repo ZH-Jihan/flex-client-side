@@ -1,21 +1,25 @@
-import axios from "axios";
 import { useRef } from "react";
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import Token from "../Hooks/Token";
 import Loading from "../Shared/Loading";
 import SocileLogin from '../Shared/SocileLogin';
  
 const Login = () => {
+  
+  
   const emailRef = useRef();
   const passwordRef = useRef();
   const navigate = useNavigate();
   const location = useLocation();
 
+
   let from = location.state?.from?.pathname || "/";
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+    const [token] = Token(user)
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
   const resetPassword = async () => {
     const email = emailRef.current.value;
@@ -31,12 +35,15 @@ const Login = () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     await signInWithEmailAndPassword(email, password);
-    const { data } = await axios.post(
-      "",
-      { email }
-    );
-    localStorage.setItem("accessToken", data.accessToken);
-    navigate(from, { replace: true });
+    if(token){
+      navigate(from, { replace: true });
+    }
+    // const { data } = await axios.post(
+    //   "",
+    //   { email }
+    // );
+    // localStorage.setItem("accessToken", data.accessToken);
+    
 
     event.target.reset();
   };

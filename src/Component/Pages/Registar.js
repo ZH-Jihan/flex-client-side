@@ -1,8 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import toast from 'react-hot-toast';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Token from '../Hooks/Token';
 import Loading from '../Shared/Loading';
 import SocileLogin from '../Shared/SocileLogin';
 
@@ -12,12 +13,10 @@ const Registar = () => {
   const passwordRef = useRef("");
   const confPasswordRef = useRef("");
   const navigate = useNavigate();
-
-  const location = useLocation();
-
-  let from = location.state?.from?.pathname || "/";
+  
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [token] = Token(user)
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     
   const handleRegister = async (event) => {
@@ -31,8 +30,10 @@ const Registar = () => {
     // }
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
-
-    navigate(from, { replace: true });
+    if(token){
+      navigate('/');
+    }
+    
   };
 
   if (loading) {
