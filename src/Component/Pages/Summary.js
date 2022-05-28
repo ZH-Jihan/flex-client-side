@@ -1,4 +1,4 @@
-import { faFlag, faPeopleGroup, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faFlag, faPeopleGroup, faShippingFast, faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from "react";
 
@@ -38,13 +38,13 @@ const Summary = () => {
           <div class="stat-figure text-secondary">
             <div class="avatar online">
               <div class="w-16 rounded-full">
-                <img src="https://api.lorem.space/image/face?w=128&h=128" />
+              <FontAwesomeIcon icon={faShippingFast} className="h-11 text-secondary"></FontAwesomeIcon>
               </div>
             </div>
           </div>
           <div class="stat-value">86%</div>
-          <div class="stat-title">Tasks done</div>
-          <div class="stat-desc text-secondary">31 tasks remaining</div>
+          <div class="stat-title">Shipments done</div>
+          <div class="stat-desc text-secondary">Wating For Shiping 13%</div>
         </div>
       </div>
     </div>

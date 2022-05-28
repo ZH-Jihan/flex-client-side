@@ -32,7 +32,7 @@ const Chackout = () => {
                         <div class="flex flex-col justify-start items-start w-full space-y-4">
                             <p class="text-xl md:text-2xl leading-normal text-gray-800 dark:text-gray-50">Product Name: {order.productName}</p>
                             <p class="text-base font-semibold leading-none text-gray-600 dark:text-white">Order Quntity: {order.orderQuantity}</p>
-                            <p class="text-base font-semibold leading-none text-gray-600 dark:text-white">Total Price: {order.price}</p>
+                            <p class="text-base font-semibold leading-none text-gray-600 dark:text-white">Total Price: € {order.price}</p>
                         </div>
                         <div class="mt-6 sm:mt-0 xl:my-10 xl:px-20 w-52 sm:w-96 xl:w-auto">
                             <img src={order.img} alt="headphones" />

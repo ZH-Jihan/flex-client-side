@@ -19,6 +19,7 @@ import Pofile from "./Component/Pages/Dashbord/Pofile";
 import Login from "./Component/Pages/Login";
 // import Payment from "./Component/Pages/Modal/Payment";
 import Notpound from "./Component/Pages/Notpound";
+import Portfoliyo from "./Component/Pages/Portfoliyo";
 import ProductDetail from "./Component/Pages/ProductDetail";
 import Registar from "./Component/Pages/Registar";
 import Footer from "./Component/Shared/Footer";
@@ -47,6 +48,7 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         {/* <Route path="/payment" element={<Payment></Payment>}></Route> */}
         <Route path="/product" element={<AllProduct></AllProduct>}></Route>
+        <Route path="/portfolio" element={<Portfoliyo></Portfoliyo>}></Route>
         <Route path="/blog" element={<Blogs></Blogs>}></Route>
         <Route path="/dashbord" element={<RequireAuth><Dashbord></Dashbord></RequireAuth>}>
           <Route index element={<Pofile></Pofile>}></Route>

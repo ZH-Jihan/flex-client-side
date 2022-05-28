@@ -17,7 +17,7 @@ const Prosucts = () => {
         style={{ backgroundColor: "#F9FBFA" }}
       >
         <div className=" ">
-          <div className=" grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 justify-items-center">
+          <div className=" grid  lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 justify-items-center">
             {slicePeoducts.map((product) => (
               <Product key={product._id} product={product}></Product>
             ))}

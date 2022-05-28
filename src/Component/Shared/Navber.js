@@ -14,9 +14,9 @@ const Navber = () => {
         <li><Link to="/home">Home</Link></li>
         <li><Link to="/product">Product</Link></li>
         {user && <li><Link to="/dashbord">Dashbord</Link></li>}
+        <li><Link to="/portfolio">My Portfolio</Link></li>
         <li><Link to="/blog">Blog</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
-        <li><Link to="/about">About</Link></li>
+        
         <form className="lg:flex sm:gap-y-4 gap-x-4 lg:pl-8 pr-8 items-center" role="search">
         <div className='form-control'>
           <input type="text" placeholder="Search" className="input" />

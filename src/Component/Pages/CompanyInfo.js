@@ -6,8 +6,8 @@ const CompanyInfo = () => {
       <div class="hero-content ">
         <div class="lg:px-12 py-8">
           <h1 class="text-5xl font-bold text-error">FLEX - this is proformance</h1>
-          <div className="flex sm:flex-col gap-12 py-6">
-            <p class="py-6">
+          <div className="flex flex-col lg:flex-row gap-12 py-6">
+            <p class="lg:py-6 py-0">
               Always keep at it, show full commitment and thus celebrate success
               over again: This is what drives not only our customers but also
               ourselves every day. And this is how we are able to offer
@@ -23,7 +23,7 @@ const CompanyInfo = () => {
               professionals in the areas of renovation, refurbishment and
               modernisation, metal and automotive/polishing.
             </p>
-            <p class="py-6">
+            <p class="lg:py-6 py-0">
               From battery tools with 10.8 and 18 volts to mains machines and
               matching accessories, from light to heavy duty with the latest
               brushless technology - FLEX offers the right power tool for

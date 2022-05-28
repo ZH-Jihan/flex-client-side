@@ -54,7 +54,7 @@ const Booking = ({product,order,setOrder}) => {
                         <input type="text" name="name" disabled value={user?.displayName || ''} className="input input-bordered w-full max-w-xs" />
                         <input type="email" name="email" disabled value={user?.email || ''} className="input input-bordered w-full max-w-xs" />
                         <input type="text" name="pname"  disabled value={`Product Name : ${name}`} className="input input-bordered w-full max-w-xs" />
-                        <input type="text" name="peice"  disabled value={`Product Price : $ ${price}`} className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name="peice"  disabled value={`Product Price : € ${price}`} className="input input-bordered w-full max-w-xs" />
                         <input
                       type="number"
                       name="orderQuantity"

@@ -76,7 +76,7 @@ const ProductDetail = () => {
           (<p class="py-6 pb-2">{product.description}</p>)
           }
           <p>Abelabile Product : {product.quantity}</p>
-          <p className="pb-3"><strong>Per Product Price :</strong> $ {product.price}</p>
+          <p className="pb-3"><strong>Per Product Price :</strong> € {product.price}</p>
           <label for="booking-modal" onClick={()=>{setOrder(product)}} class="btn btn-primary">Order</label>
         </div>
       </div>
