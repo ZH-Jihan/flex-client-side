@@ -10,7 +10,7 @@ const MakeAdmin = () => {
       isLoading,
       refetch,
     } = useQuery("user", () =>
-      fetch("https://warm-wave-77383.herokuapp.com/user", {
+      fetch("https://flex-company.cyclic.app/user", {
         method: "GET",
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,

@@ -6,7 +6,7 @@ const Order = () => {
     const [orders , setOrders] = useState([]);
     const [user] = useAuthState(auth);
     useEffect(() =>{
-        fetch(`https://warm-wave-77383.herokuapp.com/order/${user.email}`)
+        fetch(`https://flex-company.cyclic.app/order/${user.email}`)
         .then((res) => res.json())
         .then((data) => {
             setOrders(data)

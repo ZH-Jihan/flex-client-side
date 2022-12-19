@@ -19,7 +19,7 @@ const Addreview = () => {
     };
 
     console.log(reviewinfo);
-    fetch("https://warm-wave-77383.herokuapp.com/review", {
+    fetch("https://flex-company.cyclic.app/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",

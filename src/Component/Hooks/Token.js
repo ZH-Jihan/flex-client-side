@@ -6,7 +6,7 @@ const Token = user =>{
         const email = user?.user?.email;
         const currentUser = {email: email};
         if(email){
-            fetch(`https://warm-wave-77383.herokuapp.com/user/${email}`, {
+            fetch(`https://flex-company.cyclic.app/user/${email}`, {
                 method:'PUT',
                 headers: {
                     'content-type': 'application/json'

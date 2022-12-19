@@ -5,7 +5,7 @@ import Loading from '../Shared/Loading';
 
 const Chackout = () => {
     const {id} = useParams()
-    const url = `https://warm-wave-77383.herokuapp.com/orders/${id}`;
+    const url = `https://flex-company.cyclic.app/orders/${id}`;
 
     const { data: order, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',

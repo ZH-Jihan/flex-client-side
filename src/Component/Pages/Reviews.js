@@ -5,7 +5,7 @@ import Loading from "../Shared/Loading";
 
 const Reviews = () => {
   const { data: reviews, isLoading } = useQuery(["review"], () =>
-    fetch("https://warm-wave-77383.herokuapp.com/review").then((res) => res.json())
+    fetch("https://flex-company.cyclic.app/review").then((res) => res.json())
   );
   console.log(reviews);
   if (isLoading) {

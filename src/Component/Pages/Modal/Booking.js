@@ -26,7 +26,7 @@ const Booking = ({product,order,setOrder}) => {
                 orderQuantity: orderQuantity,
             }
     
-            fetch('https://warm-wave-77383.herokuapp.com/order', {
+            fetch('https://flex-company.cyclic.app/order', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

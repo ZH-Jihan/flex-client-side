@@ -5,7 +5,7 @@ const AdminRole = ({ user, refetch,index }) => {
   const { email, role } = user;
   console.log(role);
   const makeAdmin = () => {
-    fetch(`https://warm-wave-77383.herokuapp.com/admin/${email}`, {
+    fetch(`https://flex-company.cyclic.app/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

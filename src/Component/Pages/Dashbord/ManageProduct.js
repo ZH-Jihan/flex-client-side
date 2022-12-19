@@ -7,7 +7,7 @@ const ManageProducts = () => {
 const DeleteBtn = (id) => {
   const proceed = window.confirm("Are you sure you want to delete");
   if (proceed) {
-    const url = `https://warm-wave-77383.herokuapp.com/product/${id}`;
+    const url = `https://flex-company.cyclic.app/product/${id}`;
     fetch(url, {
       method: "DELETE",
     })

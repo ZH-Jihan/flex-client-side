@@ -4,7 +4,7 @@ const AllOrder = () => {
     const [allorders, setAllOrders] = useState([]);
     console.log(allorders);
     useEffect(() => {
-      const url = `https://warm-wave-77383.herokuapp.com/order`;
+      const url = `https://flex-company.cyclic.app/order`;
       fetch(url)
         .then((res) => res.json())
         .then((data) => {
