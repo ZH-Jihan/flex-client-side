@@ -5,7 +5,7 @@ import Loading from '../Shared/Loading';
 
 const Chackout = () => {
     const {id} = useParams()
-    const url = `https://flex-company.cyclic.app/orders/${id}`;
+    const url = `http://localhost:5000/orders/${id}`;
 
     const { data: order, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',

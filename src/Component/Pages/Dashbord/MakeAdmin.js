@@ -10,7 +10,7 @@ const MakeAdmin = () => {
       isLoading,
       refetch,
     } = useQuery("user", () =>
-      fetch("https://flex-company.cyclic.app/user", {
+      fetch("http://localhost:5000/user", {
         method: "GET",
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,

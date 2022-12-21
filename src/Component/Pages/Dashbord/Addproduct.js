@@ -17,7 +17,7 @@ const Addproduct = () => {
           quantity: event.target.availableQquantity?.value,
           img: event.target.img?.value,
         };
-        fetch("https://flex-company.cyclic.app/product", {
+        fetch("http://localhost:5000/product", {
           method: "POST",
           headers: {
             "content-type": "application/json",

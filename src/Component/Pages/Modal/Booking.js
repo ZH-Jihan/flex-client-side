@@ -26,7 +26,7 @@ const Booking = ({product,order,setOrder}) => {
                 orderQuantity: orderQuantity,
             }
     
-            fetch('https://flex-company.cyclic.app/order', {
+            fetch('http://localhost:5000/order', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

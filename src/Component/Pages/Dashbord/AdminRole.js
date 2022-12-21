@@ -5,7 +5,7 @@ const AdminRole = ({ user, refetch,index }) => {
   const { email, role } = user;
   console.log(role);
   const makeAdmin = () => {
-    fetch(`https://flex-company.cyclic.app/admin/${email}`, {
+    fetch(`http://localhost:5000/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

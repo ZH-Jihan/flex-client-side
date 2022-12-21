@@ -19,7 +19,7 @@ const Addreview = () => {
     };
 
     console.log(reviewinfo);
-    fetch("https://flex-company.cyclic.app/review", {
+    fetch("http://localhost:5000/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",

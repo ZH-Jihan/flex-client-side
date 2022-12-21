@@ -4,7 +4,7 @@ const useProduct = () => {
     const [products , setProduct] = useState([]);
 
     useEffect(() =>{
-        fetch('https://flex-company.cyclic.app/product')
+        fetch('http://localhost:5000/product')
         .then((res) => res.json())
         .then((data) => {
             setProduct(data)

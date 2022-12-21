@@ -4,7 +4,7 @@ const AllOrder = () => {
     const [allorders, setAllOrders] = useState([]);
     console.log(allorders);
     useEffect(() => {
-      const url = `https://flex-company.cyclic.app/order`;
+      const url = `http://localhost:5000/order`;
       fetch(url)
         .then((res) => res.json())
         .then((data) => {

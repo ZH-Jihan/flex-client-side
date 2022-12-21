@@ -10,7 +10,7 @@ const OrderTabel = () => {
 	const DeleteBtn = (id) => {
 		const proceed = window.confirm("Are you sure you want to delete");
 		if (proceed) {
-		  const url = `https://flex-company.cyclic.app/order/${id}`;
+		  const url = `http://localhost:5000/order/${id}`;
 		  fetch(url, {
 			method: "DELETE",
 		  })
